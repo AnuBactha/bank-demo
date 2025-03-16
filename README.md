@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Bank Account
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your job is to design and implement a *single-page web application* GUI that handles user input and output. The following writeup and sample input/output are CLI representation of the UI. You should adapt them to suitable web interface accordingly. 
 
-## Available Scripts
+There is no requirement to integrate with a backend service nor external database. 
 
-In the project directory, you can run:
+Your UI should be aesthetically pleasing, styled properly, consistent, and intuitive. The code pertaining to styling should be structured idiomatically as per your chosen framework / library. 
 
-### `npm start`
+It is highly preferable to provide automated tests in your solution.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Problem Statement
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You're designing a simple banking system that handles operations on bank accounts. At the moment, your system is capable of three features:
+- depositing an amount
+- withdrawing an amount
+- printing account statement
 
-### `npm test`
+When account is created, its balance is 0.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When launching the application, it prompts user for actions:
+```
+Welcome to AwesomeGIC Bank! What would you like to do?
+Deposit
+Withdraw
+Print statement
+Quit
+```
 
-### `npm run build`
+User should be to select any of the options from the UI.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deposit
+Upon selecting `Deposit` from the UI, application prompts user for amount:
+```
+Please enter the amount to deposit:
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+User is then able to enter:
+```
+500
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Then system responds with:
+```
+Thank you. $500.00 has been deposited to your account.
+Is there anything else you'd like to do?
+Deposit
+Withdraw
+Print statement
+Quit
+```
 
-### `npm run eject`
+## Withdraw
+Upon selecting `Withdraw` from the UI, system then responds with:
+```
+Please enter the amount to withdraw:
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+User is able to enter:
+```
+100
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then system responds with:
+```
+Thank you. $100.00 has been withdrawn.
+Is there anything else you'd like to do?
+Deposit
+Withdraw
+Print statement
+Quit
+```
+You can ignore where the withdrawn amount goes for now.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Print Statement
+Upon choosing to `Print statement` from the UI, system then responds with:
+```
+Date                  | Amount  | Balance
+8 Jul 2022 11:12:30AM | 500.00  | 500.00
+8 Jul 2022 11:14:15AM | -100.00 | 400.00
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Quit
+When user chooses to `Quit`, system responds with:
+```
+Thank you for banking with AwesomeGIC Bank.
+Have a nice day!
+```
